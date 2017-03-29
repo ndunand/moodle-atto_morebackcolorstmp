@@ -17,7 +17,7 @@
 /**
  * Atto text editor integration version file.
  *
- * @package    atto_morefontcolors
+ * @package    atto_morebackcolors
  * @copyright  2014-2015 Université de Lausanne
  * @author     Nicolas Dunand <nicolas.dunand@unil.ch>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -28,9 +28,9 @@
  * Set params for this plugin
  * @param string $elementid
  */
-function atto_morefontcolors_params_for_js($elementid, $options, $fpoptions) {
+function atto_morebackcolors_params_for_js($elementid, $options, $fpoptions) {
     // Pass the number of visible groups as a param.
-    $availablecolors = get_config('atto_morefontcolors', 'availablecolors');
+    $availablecolors = get_config('atto_morebackcolors', 'availablecolors');
     $possiblecolors = explode("\n", (str_replace("\r", '', $availablecolors)));
     $colors = array();
     foreach($possiblecolors as $color) {
@@ -38,7 +38,7 @@ function atto_morefontcolors_params_for_js($elementid, $options, $fpoptions) {
             $colors[] = $color;
         }
     }
-    $allowcustom = get_config ('atto_morefontcolors', 'allowcustom');
+    $allowcustom = get_config ('atto_morebackcolors', 'allowcustom');
     return array(
         'colors' => $colors,
         'allowcustom' => $allowcustom
@@ -48,7 +48,7 @@ function atto_morefontcolors_params_for_js($elementid, $options, $fpoptions) {
 /**
  * Initialise the js strings required for this module.
  */
-function atto_morefontcolors_strings_for_js() {
+function atto_morebackcolors_strings_for_js() {
     global $PAGE;
 
     $PAGE->requires->strings_for_js(array('custom',
@@ -59,6 +59,6 @@ function atto_morefontcolors_strings_for_js() {
                                           'hexadecimal',
                                           'saturation',
                                           'luminance'),
-                                    'atto_morefontcolors');
+                                    'atto_morebackcolors');
 }
 

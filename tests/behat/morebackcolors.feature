@@ -1,12 +1,12 @@
-@editor @editor_atto @atto @atto_morefontcolors
+@editor @editor_atto @atto @atto_morebackcolors
 Feature: Atto more font colours button
   To format text in Atto, I need to spray random colours all over my text like some maniacal Monet.
 
   Background:
     # Set up toolbar to add this button
     Given the following config values are set as admin:
-      | toolbar         | style1 = bold, morefontcolors | editor_atto         |
-      | availablecolors | #123456 #654321               | atto_morefontcolors |
+      | toolbar         | style1 = bold, morebackcolors | editor_atto         |
+      | availablecolors | #123456 #654321               | atto_morebackcolors |
 
   @javascript
   Scenario: Change colour of some text
@@ -20,10 +20,10 @@ Feature: Atto more font colours button
     And I select the text in the "Description" Atto editor
 
     # Click button and check the menu appears and lists both colours
-    When I click on ".atto_morefontcolors_button" "css_element"
-    Then ".atto_morefontcolors_button.atto_menu" "css_element" should be visible
-    And "//div[@data-color='#123456']" "xpath_element" should exist in the ".atto_morefontcolors_button.atto_menu" "css_element"
-    And "//div[@data-color='#654321']" "xpath_element" should exist in the ".atto_morefontcolors_button.atto_menu" "css_element"
+    When I click on ".atto_morebackcolors_button" "css_element"
+    Then ".atto_morebackcolors_button.atto_menu" "css_element" should be visible
+    And "//div[@data-color='#123456']" "xpath_element" should exist in the ".atto_morebackcolors_button.atto_menu" "css_element"
+    And "//div[@data-color='#654321']" "xpath_element" should exist in the ".atto_morebackcolors_button.atto_menu" "css_element"
 
     # Click on a menu option, save it and verify the HTML code was updated to add the colour.
     When I click on "//div[@data-color='#123456']" "xpath_element"

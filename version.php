@@ -17,7 +17,7 @@
 /**
  * Atto text editor integration version file.
  *
- * @package    atto_morefontcolors
+ * @package    atto_morebackcolors
  * @copyright  2014-2015 Université de Lausanne
  * @author     Nicolas Dunand <nicolas.dunand@unil.ch>
  * @author     Rossiani Wijaya  <rwijaya@moodle.com>
@@ -28,7 +28,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->version   = 2016113000;
 $plugin->requires  = 2014050800;
-$plugin->component = 'atto_morefontcolors';
+$plugin->component = 'atto_morebackcolors';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->release = '1.2.4 for Moodle 2.7-3.2 (build 2016113000)';
 

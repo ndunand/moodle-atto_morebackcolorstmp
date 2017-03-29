@@ -1,5 +1,5 @@
 {
-    "moodle-atto_morefontcolors-button": {
+    "moodle-atto_morebackcolors-button": {
         "requires": ["node"]
     }
 }

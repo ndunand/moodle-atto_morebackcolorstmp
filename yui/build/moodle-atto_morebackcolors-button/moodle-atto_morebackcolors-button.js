@@ -1,4 +1,4 @@
-YUI.add('moodle-atto_morefontcolors-button', function (Y, NAME) {
+YUI.add('moodle-atto_morebackcolors-button', function (Y, NAME) {
 
 // This file is part of Moodle - http://moodle.org/
 //
@@ -18,7 +18,7 @@ YUI.add('moodle-atto_morefontcolors-button', function (Y, NAME) {
 /**
  * Atto text editor integration version file.
  *
- * @package    atto_morefontcolors
+ * @package    atto_morebackcolors
  * @copyright  2014 Université de Lausanne
  * @author     Nicolas Dunand <nicolas.dunand@unil.ch>
  * @author     Rossiani Wijaya  <rwijaya@moodle.com>
@@ -26,47 +26,47 @@ YUI.add('moodle-atto_morefontcolors-button', function (Y, NAME) {
  */
 
 /**
- * @module moodle-atto_morefontcolors-button
+ * @module moodle-atto_morebackcolors-button
  */
 
 /**
- * Atto text editor morefontcolors plugin.
+ * Atto text editor morebackcolors plugin.
  *
- * @namespace M.atto_morefontcolors
+ * @namespace M.atto_morebackcolors
  * @class button
  * @extends M.editor_atto.EditorPlugin
  */
 
 
 var TEMPLATE = '' +
-    '<form id="atto_morefontcolors_dialogue">' +
+    '<form id="atto_morebackcolors_dialogue">' +
         '<div class="picker">' +
-            '<div id="atto_morefontcolors_dialogue_hue-dial"></div>' +
+            '<div id="atto_morebackcolors_dialogue_hue-dial"></div>' +
             '<div class="sliders">' +
-                '<div id="atto_morefontcolors_dialogue_sat-slider"><strong>{{get_string "saturation" component}}<span></span></strong></div>' +
-                '<div id="atto_morefontcolors_dialogue_lum-slider"><strong>{{get_string "luminance" component}}<span></span></strong></div>' +
+                '<div id="atto_morebackcolors_dialogue_sat-slider"><strong>{{get_string "saturation" component}}<span></span></strong></div>' +
+                '<div id="atto_morebackcolors_dialogue_lum-slider"><strong>{{get_string "luminance" component}}<span></span></strong></div>' +
             '</div>' +
             '<div class="color"></div>' +
         '</div>' +
         '<div class="yui3-g picker-output">' +
             '<div class="yui3-u-1-3">' +
                 '<strong>{{get_string "hexadecimal" component}}</strong>' +
-                '<input type="text" id="atto_morefontcolors_dialogue_hex-output">' +
+                '<input type="text" id="atto_morebackcolors_dialogue_hex-output">' +
             '</div>' +
             '<div class="yui3-u-1-3">' +
                '<strong>{{get_string "rgb" component}}</strong>' +
-               '<input type="text" id="atto_morefontcolors_dialogue_rgb-output">' +
+               '<input type="text" id="atto_morebackcolors_dialogue_rgb-output">' +
             '</div>' +
             '<div class="yui3-u-1-3">' +
                 '<strong>{{get_string "hsl" component}}</strong>' +
-                '<input type="text" id="atto_morefontcolors_dialogue_hsl-output">' +
+                '<input type="text" id="atto_morebackcolors_dialogue_hsl-output">' +
             '</div>' +
         '</div>' +
         '<div class="mdl-align">' +
             '<button type="submit" class="submit">{{get_string "submit" component}}</button>' +
         '</div>' +
     '</form>';
-Y.namespace('M.atto_morefontcolors').Button = Y.Base.create('button', Y.M.editor_atto.EditorPlugin, [], {
+Y.namespace('M.atto_morebackcolors').Button = Y.Base.create('button', Y.M.editor_atto.EditorPlugin, [], {
     /**
      * A reference to the current selection at the time that the dialogue
      * was opened.
@@ -110,7 +110,7 @@ Y.namespace('M.atto_morefontcolors').Button = Y.Base.create('button', Y.M.editor
         });
         if (config.allowcustom === '1') {
             items.push({
-                text: '<div style="width: 20px; height: 20px; border: 1px solid #CCC;" id="atto_morefontcolors_customicon"></div>',
+                text: '<div style="width: 20px; height: 20px; border: 1px solid #CCC;" id="atto_morebackcolors_customicon"></div>',
                 callbackArgs: 'custom',
                 callback: this._changeStyle
             });
@@ -140,7 +140,7 @@ Y.namespace('M.atto_morefontcolors').Button = Y.Base.create('button', Y.M.editor
             this._customColor();
         } else {
             this.get('host').formatSelectionInlineStyle({
-                color: e.target.getAttribute("data-color")
+                'background-color': e.target.getAttribute("data-color")
             });
         }
     },
@@ -155,7 +155,7 @@ Y.namespace('M.atto_morefontcolors').Button = Y.Base.create('button', Y.M.editor
     _customColor: function() {
         var template = Y.Handlebars.compile(TEMPLATE),
             dialogue = this.getDialogue({
-                headerContent: M.util.get_string('customcolor', "atto_morefontcolors"),
+                headerContent: M.util.get_string('customcolor', "atto_morebackcolors"),
                 width: '470px',
                 focusAfterHide: true
             });
@@ -163,7 +163,7 @@ Y.namespace('M.atto_morefontcolors').Button = Y.Base.create('button', Y.M.editor
         this._currentSelection = this.get('host').getSelection();
 
         this._content = Y.Node.create(template({
-            component: "atto_morefontcolors"
+            component: "atto_morebackcolors"
         }));
 
         dialogue.set('bodyContent', this._content).show();
@@ -177,12 +177,12 @@ Y.namespace('M.atto_morefontcolors').Button = Y.Base.create('button', Y.M.editor
                 focusAfterHide: null
             }).hide();
 
-            var color = Y.one('#atto_morefontcolors_dialogue_rgb-output').get('value');
+            var color = Y.one('#atto_morebackcolors_dialogue_rgb-output').get('value');
 
             this.get('host').setSelection(this._currentSelection);
 
             this.get('host').formatSelectionInlineStyle({
-                color: color
+                'background-color': color
             });
         }, this);
     },
@@ -195,33 +195,33 @@ Y.namespace('M.atto_morefontcolors').Button = Y.Base.create('button', Y.M.editor
      */
     _initiateColorPicker: function() {
         YUI().use('dial', 'slider', 'event-valuechange', 'color', function (Y) {
-            Y.one('#atto_morefontcolors_dialogue .picker').addClass('yui3-skin-sam');
+            Y.one('#atto_morebackcolors_dialogue .picker').addClass('yui3-skin-sam');
             var hue = new Y.Dial({
                 min: 0,
                 max: 360,
                 stepsPerRevolution: 360,
                 continuous: true,
                 centerButtonDiameter: 0.4,
-                render: '#atto_morefontcolors_dialogue_hue-dial'
+                render: '#atto_morebackcolors_dialogue_hue-dial'
             }),
             sat = new Y.Slider({
                 min: 0,
                 max: 100,
                 value: 100,
-                render: '#atto_morefontcolors_dialogue_sat-slider'
+                render: '#atto_morebackcolors_dialogue_sat-slider'
             }),
             lum = new Y.Slider({
                 min: 0,
                 max: 100,
                 value: 50,
-                render: '#atto_morefontcolors_dialogue_lum-slider'
+                render: '#atto_morebackcolors_dialogue_lum-slider'
             }),
-            satValue = Y.one('#atto_morefontcolors_dialogue #atto_morefontcolors_dialogue_sat-slider span'),
-            lumValue = Y.one('#atto_morefontcolors_dialogue #atto_morefontcolors_dialogue_lum-slider span'),
-            color = Y.one('#atto_morefontcolors_dialogue .color'),
-            hexOutput = Y.one('#atto_morefontcolors_dialogue #atto_morefontcolors_dialogue_hex-output'),
-            rgbOutput = Y.one('#atto_morefontcolors_dialogue #atto_morefontcolors_dialogue_rgb-output'),
-            hslOutput = Y.one('#atto_morefontcolors_dialogue #atto_morefontcolors_dialogue_hsl-output'),
+            satValue = Y.one('#atto_morebackcolors_dialogue #atto_morebackcolors_dialogue_sat-slider span'),
+            lumValue = Y.one('#atto_morebackcolors_dialogue #atto_morebackcolors_dialogue_lum-slider span'),
+            color = Y.one('#atto_morebackcolors_dialogue .color'),
+            hexOutput = Y.one('#atto_morebackcolors_dialogue #atto_morebackcolors_dialogue_hex-output'),
+            rgbOutput = Y.one('#atto_morebackcolors_dialogue #atto_morebackcolors_dialogue_rgb-output'),
+            hslOutput = Y.one('#atto_morebackcolors_dialogue #atto_morebackcolors_dialogue_hsl-output'),
             focused = null,
             setFocused = function(e) {
                 focused = e.currentTarget;

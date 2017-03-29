@@ -17,21 +17,21 @@
 /**
  * Atto text editor integration version file.
  *
- * @package    atto_morefontcolors
+ * @package    atto_morebackcolors
  * @copyright  2014-2015 Université de Lausanne
  * @author     Nicolas Dunand <nicolas.dunand@unil.ch>
  * @author     Rossiani Wijaya  <rwijaya@moodle.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = 'More font colors';
+$string['pluginname'] = 'More font background colors';
 $string['availablecolors'] = 'Available colors';
-$string['availablecolors_desc'] = 'You may define available colors by listing them here, as you want them displayed in the font color drop-down menu. If you want to display a 4x4 matrix of colors, enter 4 lines of 4 hex color codes, separared by spaces.<br><br>Note that changing these values only affects the appearance of the Font Color menu but does not affect existing colored texts.';
-$string['customcolor'] = 'Custom font color';
+$string['availablecolors_desc'] = 'You may define available colors by listing them here, as you want them displayed in the font background color drop-down menu. If you want to display a 4x4 matrix of colors, enter 4 lines of 4 hex color codes, separared by spaces.<br><br>Note that changing these values only affects the appearance of the Font background Color menu but does not affect existing colored texts.';
+$string['customcolor'] = 'Custom font background color';
 $string['submit'] = 'Submit';
-$string['custom'] = 'Custom font color (in hex)';
-$string['setting_custom'] = 'Allow custom color';
-$string['setting_custom_desc'] = 'Allow the users to chose a custom color by using a color picker';
+$string['custom'] = 'Custom font background color (in hex)';
+$string['setting_custom'] = 'Allow custom background color';
+$string['setting_custom_desc'] = 'Allow the users to chose a custom background color by using a color picker';
 $string['hsl'] = 'HSL:';
 $string['rgb'] = 'RGB:';
 $string['hexadecimal'] = 'Hexadecimal:';

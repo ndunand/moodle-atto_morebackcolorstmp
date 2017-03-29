@@ -1,7 +1,7 @@
 {
-    "name": "moodle-atto_morefontcolors-button",
+    "name": "moodle-atto_morebackcolors-button",
     "builds": {
-        "moodle-atto_morefontcolors-button": {
+        "moodle-atto_morebackcolors-button": {
             "jsfiles": [
                 "button.js"
             ]
