@@ -1,5 +1,5 @@
 @editor @editor_atto @atto @atto_morebackcolors
-Feature: Atto more font colours button
+Feature: Atto more font background colours button
   To format text in Atto, I need to spray random colours all over my text like some maniacal Monet.
 
   Background:
