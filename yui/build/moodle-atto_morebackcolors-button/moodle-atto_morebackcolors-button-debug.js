@@ -19,7 +19,7 @@ YUI.add('moodle-atto_morebackcolors-button', function (Y, NAME) {
  * Atto text editor integration version file.
  *
  * @package    atto_morebackcolors
- * @copyright  2014 Université de Lausanne
+ * @copyright  2014-2015 Université de Lausanne
  * @author     Nicolas Dunand <nicolas.dunand@unil.ch>
  * @author     Rossiani Wijaya  <rwijaya@moodle.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -116,7 +116,7 @@ Y.namespace('M.atto_morebackcolors').Button = Y.Base.create('button', Y.M.editor
             });
         }
         this.addToolbarMenu({
-            icon: 'e/text_color',
+            icon: 'e/text_highlight',
             overlayWidth: '4',
             menuColor: '#333333',
             globalItemConfig: {
@@ -128,11 +128,11 @@ Y.namespace('M.atto_morebackcolors').Button = Y.Base.create('button', Y.M.editor
     },
 
     /**
-     * Change the font color to the specified color.
+     * Change the font background color to the specified color.
      *
      * @method _changeStyle
      * @param {EventFacade} e
-     * @param {string} color The new font color
+     * @param {string} color The new font background color
      * @private
      */
     _changeStyle: function(e, color) {
@@ -146,7 +146,7 @@ Y.namespace('M.atto_morebackcolors').Button = Y.Base.create('button', Y.M.editor
     },
 
     /**
-     * Change the font color to the custom color
+     * Change the font background color to the custom color
      *
      * @method _customColor
      * @param {EventFacade} e
